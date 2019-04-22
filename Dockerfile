@@ -22,4 +22,3 @@ COPY package*.json $APP_DIR/
 RUN npm install
 
 COPY . $APP_DIR
-ENTRYPOINT ["npm", "run"]
