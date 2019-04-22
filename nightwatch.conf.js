@@ -6,7 +6,7 @@ module.exports = {
 
 	webdriver: {
 		start_process: true,
-		server_path: chromedriver.path,
+		server_path: "/usr/bin/chromedriver",
 		port: 9515,
 		log_path: "./reports"
 	},
@@ -14,7 +14,10 @@ module.exports = {
 	test_settings: {
 		default: {
 			desiredCapabilities: {
-				browserName: "chrome"
+				browserName: "chrome",
+				chromeOptions: {
+					args: ["no-sandbox", "headless", "disable-gpu"]
+				}
 			},
 			screenshots: {
 				enabled: true,
