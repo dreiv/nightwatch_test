@@ -17,7 +17,10 @@ module.exports = {
 				browserName: "chrome"
 			},
 			screenshots: {
-				path: "./screenshots"
+				enabled: true,
+				path: "./reports",
+				on_failure: true,
+				on_error: true
 			}
 		}
 	}
