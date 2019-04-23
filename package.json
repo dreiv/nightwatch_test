@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "nightwatch"
+		"test": "nightwatch",
+		"test:hl": "nightwatch --conf nightwatch.hl.conf.js"
 	},
 	"repository": {
 		"type": "git",
