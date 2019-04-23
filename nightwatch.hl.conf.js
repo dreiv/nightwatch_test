@@ -1,5 +1,3 @@
-const chromedriver = require("chromedriver")
-
 module.exports = {
 	src_folders: ["tests"],
 	output_folder: "reports",
@@ -8,15 +6,28 @@ module.exports = {
 		start_process: true,
 		server_path: "/usr/bin/chromedriver",
 		port: 9515,
-		log_path: "./reports"
+		log_path: "./reports",
+		"whitelisted-ips": "",
+		verbose: true
 	},
 
 	test_settings: {
 		default: {
 			desiredCapabilities: {
 				browserName: "chrome",
+				javascriptEnabled: true,
+				acceptSslCerts: true,
+				acceptInsecureCerts: true,
 				chromeOptions: {
-					args: ["no-sandbox", "headless", "disable-gpu"]
+					args: [
+						"headless",
+						"no-sandbox",
+						"disable-gpu",
+						"allow-insecure-localhost",
+						"ignore-certificate-errors",
+						"ignore-ssl-errors"
+					],
+					binary: "/usr/bin/chromium-browser"
 				}
 			},
 			screenshots: {
